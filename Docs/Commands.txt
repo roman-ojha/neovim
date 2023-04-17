@@ -1,0 +1,30 @@
+-> nvim . (open neovim inside current directory)
+-> :map (to open mapped details)
+-> :map <F2> a<C-R>=strftime("%c")<CR><Esc> (to map to different key)
+
+*) Mason Package manager
+    -> :Mason (list all the installed and available packages)
+    -> :MasonInstall <package_name> (to install package)
+    -> :MasonUninstall <package_name> (to uninstall)
+
+*) Packer Package manager
+    -> :PackerSync (sync all the included packages)
+    
+
+*) Create file & folder:
+    -> If you are in the file explorer mode, you can use:
+        -> d for creating a directory
+
+        -> % for creating a new file
+    -> You can get into the explorer mode with issuing a command :Sexplore or :Vexplore
+
+
+*) Some packages:
+    *) Neo-tree(Explorer): https://github.com/nvim-neo-tree/neo-tree.nvim
+        -> d (delete)
+        -> f (find)
+        -> r (rename)
+        -> a (new file)
+        -> A (new directory)
+        -> R (refresh)
+        -> ? (help)
