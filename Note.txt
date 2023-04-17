@@ -1,0 +1,4 @@
+*) Todo:
+    -> Lua
+    -> AstroNvim
+    -> LSP
