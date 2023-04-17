@@ -60,9 +60,9 @@ map("n", "<C-0>", "<CMD>Neotree focus<CR>")
 -- map to create a new file using NeoTree
 map("n", "<SA-n>", "<CMD>enew<CR>")
 
--- Buffer
-map("n", "<TAB>", "<CMD>bnext<CR>")
-map("n", "<S-TAB>", "<CMD>bprevious<CR>")
+-- Buffer Navigation
+map("n", "<SA-l>", ":bnext<CR>")
+map("n", "<SA-h>", "<CMD>bprevious<CR>")
 
 -- Terminal
 map("n", "<CA-b>", "<CMD>ToggleTerm direction=vertical<CR><C-\\><C-n>", { noremap = true })
