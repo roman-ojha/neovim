@@ -9,6 +9,7 @@ return require("packer").startup(function(use)
 	-- Packer
 	use("wbthomason/packer.nvim")
 
+	-- Using these plugins here so that we can require it latter
 	-- Common utilities
 	use("nvim-lua/plenary.nvim")
 
@@ -24,6 +25,7 @@ return require("packer").startup(function(use)
 		event = "BufEnter",
 		config = function()
 			require("configs.lualine")
+			-- seperating the config to a different file './lua/configs/lualine.lua' & then requiring it here
 		end,
 		requires = { "nvim-web-devicons" },
 	})
@@ -112,6 +114,9 @@ return require("packer").startup(function(use)
 			"nvim-tree/nvim-web-devicons",
 			"MunifTanjim/nui.nvim",
 		},
+		config = function()
+			require("neo-tree").setup({"*"})
+		end,
 	})
 
 	-- Show colors
@@ -161,6 +166,17 @@ return require("packer").startup(function(use)
 		config = function()
 			require("configs.transparent")
     end, 
+  })
+	
+  -- For bufferline
+  use({
+	"akinsho/nvim-bufferline.lua",
+	tag = "v3.*",
+	-- requires = "kyazdani42/nvim-web-devicons",
+	requires = "nvim-tree/nvim-web-devicons", -- for now we will use 'nvim-tree/nvim-web-devicons' instead of 'kyazdani42/nvim-web-devicons' icon
+	config = function()
+	  require("configs.bufferline")
+	end,
   })
 end)
 
