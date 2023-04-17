@@ -1,3 +1,4 @@
+-> Neovim uses Lua programming language which is lightweight
 *) Todo:
     -> Lua
     -> AstroNvim
