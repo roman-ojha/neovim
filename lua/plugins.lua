@@ -18,6 +18,8 @@ return require("packer").startup(function(use)
 
 	-- Colorschema
 	use("rebelot/kanagawa.nvim")
+	
+	use ("moll/vim-bbye")
 
 	-- Statusline
 	use({

@@ -43,6 +43,9 @@ map("n", "<C-s>", "<CMD>update<CR>")
 map("n", "<SA-w>", "<CMD>q<CR>")
 -- map to close all windows
 map("n", "<CA-w>", "<CMD>qall<CR>")
+-- close Buffer
+map("n", "<SA-w>", "<CMD>Bdelete!<CR>")
+-- here is ':bdelete', ':bdelete!', ':Bdelete' test it out by you self
 
 -- Exit insert mode
 -- map("i", "jk", "<ESC>")

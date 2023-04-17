@@ -6,10 +6,10 @@ end
 bufferline.setup({
     options = {
         numbers = "none", -- | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
-        -- close_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
-        -- right_mouse_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
-        -- left_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"
-        -- middle_mouse_command = nil, -- can be a string | function, see "Mouse actions"
+        close_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
+        right_mouse_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
+        left_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"
+        middle_mouse_command = nil, -- can be a string | function, see "Mouse actions"
         -- NOTE: this plugin is designed with this icon in mind,
         -- and so changing this is NOT recommended, this is intended
         -- as an escape hatch for people who cannot bear it for whatever reason
@@ -55,7 +55,7 @@ bufferline.setup({
         --     return true
         --   end
         -- end,
-        offsets = { { filetype = "Neotree", text = "", padding = 1 } },
+        offsets = { { filetype = "neo-tree", text = "", padding = 1 } },
         show_buffer_icons = true,
         show_buffer_close_icons = true,
         show_close_icon = true,
@@ -72,28 +72,27 @@ bufferline.setup({
         -- end
       },
       highlights = {
-        -- fill = {
-        --   guifg = { attribute = "fg", highlight = "#ff0000" },
-        --   guibg = { attribute = "bg", highlight = "TabLine" },
-        -- },
-        -- background = {
-        --   guifg = { attribute = "fg", highlight = "TabLine" },
-        --   guibg = { attribute = "bg", highlight = "TabLine" },
-        -- },
+        fill = {
+          -- fg = "#ff0000" ,
+          -- bg = "#0000ff" ,
+        },
+        background = {
+          -- fg = { highlight = "TabLine" },
+          -- bg = { highlight = "TabLine" },
+        },
     
-        -- buffer_selected = {
-        --   guifg = {attribute='fg',highlight='#ff0000'},
-        --   guibg = {attribute='bg',highlight='#0000ff'},
-        --   gui = 'none'
-        --   },
-        -- buffer_visible = {
-        --   guifg = { attribute = "fg", highlight = "TabLine" },
-        --   guibg = { attribute = "bg", highlight = "TabLine" },
-        -- },
+        buffer_selected = {
+          -- fg = '#ff0000',
+          -- bg = '#0000ff',
+          },
+        buffer_visible = {
+          fg = { attribute = "fg", highlight = "TabLine" },
+          bg = { attribute = "bg", highlight = "TabLine" },
+        },
     
         -- close_button = {
-        --   guifg = { attribute = "fg", highlight = "TabLine" },
-        --   guibg = { attribute = "bg", highlight = "TabLine" },
+        --   fg =  "#ff0000" ,
+        --   bg = "#0000ff" ,
         -- },
         -- close_button_visible = {
         --   guifg = { attribute = "fg", highlight = "TabLine" },
@@ -152,16 +151,20 @@ bufferline.setup({
         --   guibg = { attribute = "bg", highlight = "TabLine" },
         -- },
         -- separator_selected = {
-        --   guifg = { attribute = "bg", highlight = "Normal" },
-        --   guibg = { attribute = "bg", highlight = "Normal" },
+        --   fg = "#0000ff",
+        --   bg ="#0000ff" ,
+        -- },
+        -- separator_visible = {
+        --   fg = "#0000ff",
+        --   bg ="#0000ff" ,
         -- },
         -- separator_visible = {
         --   guifg = {attribute='bg',highlight='TabLine'},
         --   guibg = {attribute='bg',highlight='TabLine'}
         --   },
-        -- indicator_selected = {
-        --   guifg = { attribute = "fg", highlight = "LspDiagnosticsDefaultHint" },
-        --   guibg = { attribute = "bg", highlight = "Normal" },
-        -- },
+        indicator_selected = {
+          fg ="#2bd1fc" ,
+          -- bg ="#2bd1fc" ,
+        },
       },
 })
