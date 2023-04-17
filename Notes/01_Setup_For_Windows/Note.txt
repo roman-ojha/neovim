@@ -1,0 +1,5 @@
+=> Install Chocolaty
+=> Create New Folder 'nvim' inside : C:\Users\razzr\AppData\Local
+    => cd nvim
+=> Create 'init.vim' file
+=> 
