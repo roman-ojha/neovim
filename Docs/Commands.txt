@@ -17,6 +17,9 @@
 
         -> % for creating a new file
     -> You can get into the explorer mode with issuing a command :Sexplore or :Vexplore
+    
+*) Terminal Emulator:
+    -> :terminal (to run terminal)
 
 
 *) Some packages:
