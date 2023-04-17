@@ -2,8 +2,7 @@
 => Create New Folder 'nvim' inside : C:\Users\razzr\AppData\Local
     => cd nvim
 => Create 'init.Lua' file
-
-
+=> NOTE: './nvim' is the exact replication of what we have to do.
 
 *) Package:
     *> We will use https://github.com/wbthomason/packer.nvim package manager
