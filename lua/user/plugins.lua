@@ -47,7 +47,6 @@ return packer.startup(function(use)
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   -- use "numToStr/Comment.nvim" -- Easily comment stuff
   use "kyazdani42/nvim-web-devicons"
-  -- use "kyazdani42/nvim-tree.lua"
 	use({
 		"nvim-neo-tree/neo-tree.nvim",
 		branch = "v2.x",
@@ -84,7 +83,6 @@ return packer.startup(function(use)
 
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
-  --use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use("williamboman/mason.nvim") -- Simple to use Language Server Installer
 	use("williamboman/mason-lspconfig.nvim") -- Simple to use Language Server Installe
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for

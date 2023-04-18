@@ -2,6 +2,12 @@
 local servers = {
     "pyright",
     "lua_ls",
+    "tailwindcss",
+    "html",
+    "jsonls",
+    "cssls",
+    "tsserver",
+    "eslint",
   }
   
 local settings = {
