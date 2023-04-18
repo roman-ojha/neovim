@@ -123,13 +123,15 @@ return packer.startup(function(use)
 		config = function()
 			require("configs.cmp")
 		end,
-	})
-
-	use("hrsh7th/cmp-nvim-lsp")
-
-	use({ "hrsh7th/cmp-path", after = "nvim-cmp" })
-
-	use({ "hrsh7th/cmp-buffer", after = "nvim-cmp" })
+	}) -- The completions plugin
+	use("hrsh7th/cmp-nvim-lsp") 
+	use({ "hrsh7th/cmp-path", after = "nvim-cmp" }) -- Path Completions
+	use({ "hrsh7th/cmp-buffer", after = "nvim-cmp" }) -- Buffer completions
+    use({ "hrsh7th/cmp-cmdline", after = "nvim-cmp" }) -- Command line completions
+    use({ "saadparwaiz1/cmp_luasnip", after = "nvim-cmp" }) -- Snippets Completions
+    -- Snippets
+    use ({"L3MON4D3/LuaSnip", after="nvim-cmp"}) --snippet engine
+    use ({"rafamadriz/friendly-snippets", after="nvim-cmp"}) -- a bunch of snippets to use
 
 	-- LSP diagnostics, code actions, and more via Lua.
 	use({

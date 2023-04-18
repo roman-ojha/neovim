@@ -6,6 +6,7 @@
   -> :PackerSync (install/update plugins)
   -> :PakerCompile (compile plugins)
   -> :PackerClean (clean plugins)
+  -> :PackerInstall (install require plugins) 
   -> :PackerInstall <plugin> (install plugin) 
   -> :PackerUpdate <plugin> (update plugin)
   -> :PackerStatus (status of plugins)

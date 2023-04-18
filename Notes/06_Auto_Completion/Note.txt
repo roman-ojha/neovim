@@ -1,0 +1,25 @@
+=> For Autocompletion we will going to use 'nvim-cmp' plugin
+  -> https://github.com/hrsh7th/nvim-cmp
+  => Also we will going to nee other plugins as well:
+      use("hrsh7th/cmp-nvim-lsp") 
+      use({ "hrsh7th/cmp-path", after = "nvim-cmp" }) -- Path Completions
+      use({ "hrsh7th/cmp-buffer", after = "nvim-cmp" }) -- Buffer completions
+      use({ "hrsh7th/cmp-cmdline", after = "nvim-cmp" }) -- Command line completions
+      use({ "saadparwaiz1/cmp_luasnip", after = "nvim-cmp" }) -- Snippets Completions
+  => Also we will going to use slippets engines:
+      use "L3MON4D3/LuaSnip" --snippet engine
+      use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+
+  => After that you can use it and configure inside 'lua/configs/cmp.lua'
+
+
+*) Add new completions:
+  => You can get all bunch of completions here:
+    -> https://github.com/topics/nvim-cmp
+  => to use it you have to add it into the source list inside 'lua/configs/cmp.lua':
+    ->   sources = {
+            { name = "luasnip" },
+            { name = "buffer" },
+            { name = "path" },
+            {name = "copilot.vim"}
+        },

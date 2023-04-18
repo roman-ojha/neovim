@@ -4,4 +4,3 @@ require("maps")
 require("plugins")
 require("colorscheme")
 require("terminal_emulator")
-
