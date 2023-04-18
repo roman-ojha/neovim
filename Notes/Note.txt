@@ -5,7 +5,7 @@
     -> LSP
 
 *) Reference:
-    *)
+    *) Neovim from scratch
         -> https://youtu.be/ctH-a-1eUME?list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ
         -> https://github.com/LunarVim/Neovim-from-scratch
     *)

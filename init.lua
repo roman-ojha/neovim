@@ -1,5 +1,5 @@
 -- vim.o.shell = 'C:\\Program Files\\Git\\bin\\bash.exe' -- default command line
-vim.opt.shell ="/c/Program Files/Git/bin/bash.exe" -- default terminal
+vim.opt.shell ="cmd.exe" -- default terminal
 require("settings")
 require("maps")
 require("plugins")

@@ -1,0 +1,20 @@
+*) For Windows:
+    => Install Chocolaty
+    => Create New Folder 'nvim' inside : C:\Users\razzr\AppData\Local
+        => cd nvim
+    => Create 'init.Lua' file
+    => NOTE: './nvim' is the exact replication of what we have to do.
+
+    *) Package:
+        *> We will use https://github.com/wbthomason/packer.nvim package manager
+            -> git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"
+    *) Add Editor Plugins & It's Configuration:
+        *> Now we we Add Editor plugins inside the './nvim/lua/plugins.lua' where this 'plugins.lua' file require some of the plugins configuration inside './nvim/lua/configs' folder
+
+    *) Installing Plugins
+        *> And to install all the used plugins you have to first go to:
+            -> nvim .
+            -> :PackerSync
+            
+    *) Adding Key Bindings:
+        -> To add Key Bindings we will going to add 'maps.lua' inside './nvim/lua/maps.lua'
