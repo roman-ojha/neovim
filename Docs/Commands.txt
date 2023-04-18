@@ -9,6 +9,7 @@
 
 *) Packer Package manager
     -> :PackerSync (sync all the included packages)
+    -> :PackerCompile (compile the plugins)
     
 
 *) Create file & folder:

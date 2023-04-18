@@ -80,13 +80,17 @@ map("n", "<SA-l>", ":bnext<CR>", opts)
 map("n", "<SA-h>", "<CMD>bprevious<CR>", opts)
 
 -- Terminal
-map("n", "<CA-b>", "<CMD>ToggleTerm direction=vertical<CR><C-\\><C-n>", term_opts)
+map("n", "<CA-b>", "<CMD>ToggleTerm direction=vertical<CR>", term_opts)
 -- Ctrl + Alt + b
-map("n", "<CA-n>", "<CMD>ToggleTerm direction=float<CR><C-\\><C-n>", term_opts)
+map("n", "<CA-n>", "<CMD>ToggleTerm direction=float<CR>", term_opts)
+map("t", "<CA-b>", "<CMD>ToggleTerm direction=vertical<CR><ESC>", term_opts)
+map("t", "<CA-n>", "<CMD>ToggleTerm direction=float<CR><ESC>", term_opts)
 -- map to exit terminal mode
 map("t", "<C-[>", "<C-\\><C-n>", term_opts)
 -- map to focus from terminal to normal mode and transfer the cursor to buffers
 map("t","<C-j>", "<C-\\><C-n><C-w>h", term_opts)
+-- open powershell as buffer
+map("n", "<SA-t>", "<CMD>terminal pwsh.exe<CR>", term_opts)
 
 
 -- Markdown Preview
@@ -109,10 +113,21 @@ map("n", "<CA-h>", ":vertical resize -2<CR>", opts)
 map("n", "<CA-k>", ":resize -2<CR>", opts)
 map("n", "<CA-j>", ":resize +2<CR>", opts)
 
-
 -- Move text up and down
 map("v", "<A-j>", ":m '>+1<cr>gv=gv", opts)
 map("v", "<A-k>", ":m '<-2<cr>gv=gv", opts)
-map("v", "p", '"_dP', opts)
 map("n", "<A-j>", ":m .+1<CR>==", opts)
 map("n", "<A-k>", ":m .-2<CR>==", opts)
+map("v", "<A-Down>", ":m '>+1<cr>gv=gv", opts)
+map("v", "<A-Up>", ":m '<-2<cr>gv=gv", opts)
+map("n", "<A-Down>", ":m .+1<CR>==", opts)
+map("n", "<A-Up>", ":m .-2<CR>==", opts)
+-- hold on to the copied value and paste it
+map("v", "p", '"_dP', opts)
+
+-- Stay in indent mode while tabbing lines in visual mod
+map("v", "<", "<gv", opts)
+map("v", ">", ">gv", opts)
+
+-- delete word like ctrl + backspace
+map("n", "<BS>","diw", opts)
