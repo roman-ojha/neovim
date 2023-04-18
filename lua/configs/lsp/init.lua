@@ -5,7 +5,7 @@ if not status_ok then
 end
 
 -- Now requiring lsp manson
-require ("config.lsp.mason")
-require("config.lsp.handlers").setup()
+require ("configs.lsp.mason")
+require("configs.lsp.handlers").setup()
 
 -- require "user.lsp.null-ls"

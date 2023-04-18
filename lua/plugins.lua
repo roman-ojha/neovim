@@ -99,26 +99,10 @@ return packer.startup(function(use)
 	})
 
 	-- LSP
-	use({
-		"neovim/nvim-lspconfig", -- This plugin will Enable LSP
-		config = function()
-			require("configs.lsp")
-		end,
-	})
+	use("neovim/nvim-lspconfig")-- This plugin will Enable LSP
       -- Mason: Portable package manager
-	use({
-		"williamboman/mason.nvim",
-		config = function()
-			require("mason").setup()
-		end,
-	}) -- Simple to use Language Server Installer
-	use({
-		"williamboman/mason-lspconfig.nvim",
-		config = function()
-			require("configs.mason-lsp")
-		end,
-		after = "mason.nvim",
-	})
+	use("williamboman/mason.nvim") -- Simple to use Language Server Installer
+	use("williamboman/mason-lspconfig.nvim") -- Simple to use Language Server Installer
 
 	-- LSP diagnostics, code actions, and more via Lua.
 	-- use({

@@ -100,4 +100,5 @@ if status_ok then
   M.capabilities = cmp_nvim_lsp.default_capabilities()
 end
 
+-- After adding all the handlers, we will return M
 return M

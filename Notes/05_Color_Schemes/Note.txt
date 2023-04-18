@@ -13,5 +13,3 @@
 
 => If you want to check does the required color scheme exist in that canse you can create new file to check 'colorscheme.lua'
   -> https://github.com/LunarVim/Neovim-from-scratch/blob/04-colorscheme/lua/user/colorscheme.lua
-
--> Todo: https://youtu.be/RtNPfJKNr_8?list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ&t=488

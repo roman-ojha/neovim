@@ -3,9 +3,24 @@
 
 *) Commands:
   -> :LspInfo (to see all the running server)
-  -> :
+  -> :Mason (to see package manager)
 
 *) Setup:
   -> First we will add sum plugins:
-    -> 
       -> https://github.com/williamboman/mason.nvim
+      -> And all of the plugins are mentions inside lsp plugins.lus
+  => After that we will create the separate folder for lsp and write every things related to LSP
+  => Also we will add 'nvim_lsp' as completion inside 'cmp.lua', we will add this to top because we want LSP completion to come first
+      sources = {
+        {name = "nvim_lsp"}
+      },
+  => So what ever server that we will install we have to put that into 'manson.lua' file
+      local servers = {
+          "lua_ls",
+          "pyright",
+          "jsonls",
+        }
+    -> Here every server that we specify we have to create a settings file of that inside 'lsp/settings' folder
+
+*) Todo:
+  -> https://youtu.be/6F3ONwrCxMg?list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ&t=1657
