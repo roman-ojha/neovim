@@ -68,6 +68,7 @@ return packer.startup(function(use)
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "lunarvim/darkplus.nvim"
+	use "rebelot/kanagawa.nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -83,7 +84,9 @@ return packer.startup(function(use)
 
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
-  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  --use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  use("williamboman/mason.nvim") -- Simple to use Language Server Installer
+	use("williamboman/mason-lspconfig.nvim") -- Simple to use Language Server Installe
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
