@@ -49,6 +49,9 @@ else
 	print("Telescope not found")
 end
 
+-- Packer plugin popup window
+map("n","<leader>pp","<CMD>PackerStatus<CR>",opts)
+
 -- <leader> = the space key
 
 -- Save

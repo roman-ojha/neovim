@@ -1,7 +1,7 @@
 local fn = vim.fn
 
 -- Automatically install packer:
--- Firstly specifying the path of packer.nvim
+-- Firstly specifying the path of packer.nvim data directory
 local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
   PACKER_BOOTSTRAP = fn.system {
@@ -38,7 +38,8 @@ if not status_ok then
   return
 end
 
--- if we have Have packer use a popup window
+-- if we have Have packer use a popup window for that we have to install the plugins 'popup.nvim'
+-- https://github.com/wbthomason/packer.nvim#using-a-floating-window
 packer.init {
   display = {
     open_fn = function()
@@ -47,13 +48,16 @@ packer.init {
   },
 }
 
+-- Now bellow code we will use all the required plugins
 return packer.startup(function(use)
-	-- Packer
-	use("wbthomason/packer.nvim")
-
 	-- Using these plugins here so that we can require it latter
+	-- Packer
+	use("wbthomason/packer.nvim") -- Have packer manager itself
+
+    use ("nvim-lua/popup.nvim") -- An Implementation of the Popup API from vim in NeoVim
+
 	-- Common utilities
-	use("nvim-lua/plenary.nvim")
+	use("nvim-lua/plenary.nvim") -- Useful lua functions used in lot's of other plugins
 
 	-- Icons
 	use("nvim-tree/nvim-web-devicons")
