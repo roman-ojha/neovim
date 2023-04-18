@@ -1,3 +1,4 @@
+require "user.terminal_emulator"
 require "user.options"
 require "user.keymaps"
 require "user.plugins"

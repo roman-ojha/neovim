@@ -4,8 +4,8 @@ if not status_ok then
 end
 
 toggleterm.setup({
-	size = 20,
-	open_mapping = [[<c-\>]],
+	size = 50,
+	open_mapping = [[<F7>]],
 	hide_numbers = true,
 	shade_filetypes = {},
 	shade_terminals = true,
@@ -15,7 +15,7 @@ toggleterm.setup({
 	persist_size = true,
 	direction = "float",
 	close_on_exit = true,
-	shell = vim.o.shell,
+	shell = vim.g.terminal_emulator,
 	float_opts = {
 		border = "curved",
 		winblend = 0,
