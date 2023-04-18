@@ -34,6 +34,7 @@
         -> A (new directory)
         -> R (refresh)
         -> ? (help)
+        -> ctrl + shift + h (toggle hidden files)
 
 *) Color Schemes:
   -> colorscheme <given_color>

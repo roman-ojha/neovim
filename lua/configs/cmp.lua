@@ -38,6 +38,7 @@ local cmp_status_ok, cmp = pcall(require, "cmp")
 if not cmp_status_ok then
   return
 end
+vim.notify("Hello roman")
 local snip_status_ok, luasnip = pcall(require, "luasnip")
 if not snip_status_ok then
   return
@@ -143,6 +144,8 @@ cmp.setup {
       vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
       -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
       vim_item.menu = ({
+        nvim_lsp = "[LSP]", -- On Suggestion menu, this will show [LSP] as source
+        nvim_lua = "[LUA]",
         luasnip = "[Snippet]",
         buffer = "[Buffer]",
         path = "[Path]",
@@ -152,10 +155,11 @@ cmp.setup {
   },
   sources = {
     {name = "nvim_lsp"}, -- For LSP
+    {name = "nvim_lua"}, 
     { name = "luasnip" },
     { name = "buffer" },
     { name = "path" },
-    {name = "copilot.vim"}
+    -- {name = "copilot.vim"}
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
