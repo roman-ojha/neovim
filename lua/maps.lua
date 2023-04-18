@@ -85,7 +85,8 @@ map("n", "<CA-b>", "<CMD>ToggleTerm direction=vertical<CR><C-\\><C-n>", term_opt
 map("n", "<CA-n>", "<CMD>ToggleTerm direction=float<CR><C-\\><C-n>", term_opts)
 -- map to exit terminal mode
 map("t", "<C-[>", "<C-\\><C-n>", term_opts)
--- map to focus terminal
+-- map to focus from terminal to normal mode and transfer the cursor to buffers
+map("t","<C-j>", "<C-\\><C-n><C-w>h", term_opts)
 
 
 -- Markdown Preview
@@ -99,10 +100,14 @@ map("n", "<C-k>", "<C-w>k", opts)
 map("n", "<C-j>", "<C-w>j", opts)
 
 -- Resize Windows
-map("n", "<CA-l>", "<C-w>>", opts)
-map("n", "<CA-h>", "<C-w><", opts)
-map("n", "<CA-k>", "<C-w>-", opts)
-map("n", "<CA-j>", "<C-w>+", opts)
+-- map("n", "<CA-l>", "<C-w>>", opts)
+-- map("n", "<CA-h>", "<C-w><", opts)
+-- map("n", "<CA-k>", "<C-w>-", opts)
+-- map("n", "<CA-j>", "<C-w>+", opts)
+map("n", "<CA-l>", ":vertical resize +2<CR>", opts)
+map("n", "<CA-h>", ":vertical resize -2<CR>", opts)
+map("n", "<CA-k>", ":resize -2<CR>", opts)
+map("n", "<CA-j>", ":resize +2<CR>", opts)
 
 
 -- Move text up and down
