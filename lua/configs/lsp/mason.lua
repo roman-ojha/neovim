@@ -1,8 +1,6 @@
 -- Specifying the server name
 local servers = {
-    -- "lua_ls",
     "pyright",
-    -- "jsonls",
   }
   
 local settings = {

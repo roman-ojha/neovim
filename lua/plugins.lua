@@ -105,23 +105,14 @@ return packer.startup(function(use)
 	 use("williamboman/mason-lspconfig.nvim") -- Simple to use Language Server Installer
 
 	-- LSP diagnostics, code actions, and more via Lua.
-	-- use({
-	-- 	"jose-elias-alvarez/null-ls.nvim",
-	-- 	config = function()
-	-- 		require("configs.null-ls")
-	-- 	end,
-	-- 	requires = { "nvim-lua/plenary.nvim" },
-	-- })
+	--use({
+	--    "jose-elias-alvarez/null-ls.nvim",
+	--	requires = { "nvim-lua/plenary.nvim" },
+	--})
 
 
 
-	-- use("onsails/lspkind-nvim")
-	-- use({
-	-- 	"L3MON4D3/LuaSnip",
-	-- 	-- follow latest release.
-	-- 	tag = "v<CurrentMajor>.*",
-	-- })
-
+	 use("onsails/lspkind-nvim")
 	-- Cmp: Autocomplete
 	use({
 		"hrsh7th/nvim-cmp",
@@ -135,9 +126,8 @@ return packer.startup(function(use)
 	use({ "hrsh7th/cmp-buffer", after = "nvim-cmp" }) -- Buffer completions
     use({ "hrsh7th/cmp-cmdline", after = "nvim-cmp" }) -- Command line completions
     use({ "saadparwaiz1/cmp_luasnip", after = "nvim-cmp" }) -- Snippets Completions
-    use({"hrsh7th/cmp-nvim-lua", after = "nvim-cmp"}) -- Completion Source when you are working with config
     -- Github Copilot
-    -- use({"github/copilot.vim", after = "nvim-cmp"})
+    use({"github/copilot.vim", after = "nvim-cmp"})
     -- Snippets
     use ({"L3MON4D3/LuaSnip", after="nvim-cmp"}) --snippet engine
     use ({"rafamadriz/friendly-snippets", after="nvim-cmp"}) -- a bunch of snippets to use
