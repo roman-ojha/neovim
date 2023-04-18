@@ -21,6 +21,9 @@ return require("packer").startup(function(use)
 	
 	use ("moll/vim-bbye")
 
+  -- Github Copilot
+  use("github/copilot.vim")
+
 	-- Statusline
 	use({
 		"nvim-lualine/lualine.nvim",
@@ -181,4 +184,3 @@ return require("packer").startup(function(use)
 	end,
   })
 end)
-
