@@ -1,0 +1,2 @@
+=> You can make the command with the you custom key binding.
+=> Here is some example: https://github.com/LunarVim/Neovim-from-scratch/blob/02-keymaps/lua/user/keymaps.lua

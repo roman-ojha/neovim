@@ -1,6 +1,16 @@
-local function map(mode, lhs, rhs)
-	vim.keymap.set(mode, lhs, rhs, { silent = true })
+local opts = { noremap = true, silent = true }
+
+local term_opts = { silent = true }
+
+local function map(mode, lhs, rhs, options)
+	vim.keymap.set(mode, lhs, rhs, options)
 end
+
+-- Setting up a mapleader and maplocalleader as space key
+local global = vim.g
+-- Map <leader> = the space key
+global.mapleader = " "
+global.maplocalleader = " "
 
 -- map("<mode>", "<key_to_map>", "<command_to_execute>")
 -- <mode> = n, v, i, c, t
@@ -18,18 +28,23 @@ end
 -- 		<C-l> = the control + l key 
 -- 		<Space> = the space key
 -- <command_to_execute> = the command to execute
+--      <CMD>update<CR> = :update<CR>
+--      <CMD>q<CR> = :q<CR>
+--      <CMD> = :
+--      <CR> = press <Enter>
+--      gv = visual mode
 
 -- Some more key binding examples: https://neovim.discourse.group/t/how-can-i-map-ctrl-shift-f5-ctrl-shift-b-ctrl-and-alt-enter/2133/2
 
 local status, telescope = pcall(require, "telescope.builtin")
 if status then
 	-- Telescope
-	map("n", "<leader>ff", telescope.find_files)
-	map("n", "<leader>fg", telescope.live_grep)
-	map("n", "<leader>fb", telescope.buffers)
-	map("n", "<leader>fh", telescope.help_tags)
-	map("n", "<leader>fs", telescope.git_status)
-	map("n", "<leader>fc", telescope.git_commits)
+	map("n", "<leader>ff", telescope.find_files, opts)
+	map("n", "<leader>fg", telescope.live_grep, opts)
+	map("n", "<leader>fb", telescope.buffers, opts)
+	map("n", "<leader>fh", telescope.help_tags, opts)
+	map("n", "<leader>fs", telescope.git_status, opts)
+	map("n", "<leader>fc", telescope.git_commits, opts)
 else
 	print("Telescope not found")
 end
@@ -37,54 +52,62 @@ end
 -- <leader> = the space key
 
 -- Save
-map("n", "<C-s>", "<CMD>update<CR>")
+map("n", "<C-s>", "<CMD>update<CR>", opts)
 
 -- Quit
-map("n", "<SA-w>", "<CMD>q<CR>")
+map("n", "<SA-w>", "<CMD>q<CR>", opts)
 -- map to close all windows
-map("n", "<CA-w>", "<CMD>qall<CR>")
+map("n", "<CA-w>", "<CMD>qall<CR>", opts)
 -- close Buffer
-map("n", "<SA-w>", "<CMD>Bdelete!<CR>")
+map("n", "<SA-w>", "<CMD>Bdelete!<CR>", opts)
 -- here is ':bdelete', ':bdelete!', ':Bdelete' test it out by you self
 
 -- Exit insert mode
 -- map("i", "jk", "<ESC>")
 
 -- Split Windows
-map("n", "<C-\\>", "<CMD>vsplit<CR>")
-map("n", "<CS-\\>", "<CMD>split<CR>")
+map("n", "<C-\\>", "<CMD>vsplit<CR>", opts)
+map("n", "<CS-\\>", "<CMD>split<CR>", opts)
 
 -- NeoTree
-map("n", "<SA-b>", "<CMD>Neotree toggle<CR>")
-map("n", "<C-0>", "<CMD>Neotree focus<CR>")
+map("n", "<SA-b>", "<CMD>Neotree toggle<CR>", opts)
+map("n", "<C-0>", "<CMD>Neotree focus<CR>", opts)
 -- map to create a new file using NeoTree
-map("n", "<SA-n>", "<CMD>enew<CR>")
+map("n", "<SA-n>", "<CMD>enew<CR>", opts)
 
 -- Buffer Navigation
-map("n", "<SA-l>", ":bnext<CR>")
-map("n", "<SA-h>", "<CMD>bprevious<CR>")
+map("n", "<SA-l>", ":bnext<CR>", opts)
+map("n", "<SA-h>", "<CMD>bprevious<CR>", opts)
 
 -- Terminal
-map("n", "<CA-b>", "<CMD>ToggleTerm direction=vertical<CR><C-\\><C-n>", { noremap = true })
+map("n", "<CA-b>", "<CMD>ToggleTerm direction=vertical<CR><C-\\><C-n>", term_opts)
 -- Ctrl + Alt + b
-map("n", "<CA-n>", "<CMD>ToggleTerm direction=float<CR><C-\\><C-n>", { noremap = true })
+map("n", "<CA-n>", "<CMD>ToggleTerm direction=float<CR><C-\\><C-n>", term_opts)
 -- map to exit terminal mode
-map("t", "<C-[>", "<C-\\><C-n>")
+map("t", "<C-[>", "<C-\\><C-n>", term_opts)
 -- map to focus terminal
 
 
 -- Markdown Preview
-map("n", "<leader>m", "<CMD>MarkdownPreview<CR>")
-map("n", "<leader>ms", "<CMD>MarkdownPreviewStop<CR>")
+map("n", "<leader>m", "<CMD>MarkdownPreview<CR>", opts)
+map("n", "<leader>ms", "<CMD>MarkdownPreviewStop<CR>", opts)
 
 -- Window Navigation
-map("n", "<C-h>", "<C-w>h")
-map("n", "<C-l>", "<C-w>l")
-map("n", "<C-k>", "<C-w>k")
-map("n", "<C-j>", "<C-w>j")
+map("n", "<C-h>", "<C-w>h", opts)
+map("n", "<C-l>", "<C-w>l", opts)
+map("n", "<C-k>", "<C-w>k", opts)
+map("n", "<C-j>", "<C-w>j", opts)
 
 -- Resize Windows
-map("n", "<CA-h>", "<C-w><")
-map("n", "<CA-l>", "<C-w>>")
-map("n", "<CA-j>", "<C-w>+")
-map("n", "<CA-k>", "<C-w>-")
+map("n", "<CA-l>", "<C-w>>", opts)
+map("n", "<CA-h>", "<C-w><", opts)
+map("n", "<CA-k>", "<C-w>-", opts)
+map("n", "<CA-j>", "<C-w>+", opts)
+
+
+-- Move text up and down
+map("v", "<A-j>", ":m '>+1<cr>gv=gv", opts)
+map("v", "<A-k>", ":m '<-2<cr>gv=gv", opts)
+map("v", "p", '"_dP', opts)
+map("n", "<A-j>", ":m .+1<CR>==", opts)
+map("n", "<A-k>", ":m .-2<CR>==", opts)

@@ -1,0 +1,5 @@
+*) Setup Setting Options
+  -> here we will see how we can change some settings of the editor
+  -> This is an example of setting: https://github.com/LunarVim/Neovim-from-scratch/blob/01-options/lua/user/options.lua
+  -> You can look for all the list of options available using:
+    -> :help options
