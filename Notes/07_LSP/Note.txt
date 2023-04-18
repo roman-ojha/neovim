@@ -1,0 +1,11 @@
+*) LSP (Language Server Progocol)
+  -> Neovim supports the Language Server Protocol (LSP), which means it acts as a client to language servers and includes a Lua framework vim.lsp for building enhanced LSP tools. LSP facilitates features like: go-to-definition; find-references; hover; completion; rename; format; refactor
+
+*) Commands:
+  -> :LspInfo (to see all the running server)
+  -> :
+
+*) Setup:
+  -> First we will add sum plugins:
+    -> 
+      -> https://github.com/williamboman/mason.nvim

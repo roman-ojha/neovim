@@ -67,9 +67,6 @@ return packer.startup(function(use)
 	
 	use ("moll/vim-bbye")
 
-  -- Github Copilot
-  use("github/copilot.vim")
-
 	-- Statusline
 	use({
 		"nvim-lualine/lualine.nvim",
@@ -103,20 +100,45 @@ return packer.startup(function(use)
 
 	-- LSP
 	use({
-		"neovim/nvim-lspconfig",
+		"neovim/nvim-lspconfig", -- This plugin will Enable LSP
 		config = function()
 			require("configs.lsp")
 		end,
 	})
-
-	use("onsails/lspkind-nvim")
+      -- Mason: Portable package manager
 	use({
-		"L3MON4D3/LuaSnip",
-		-- follow latest release.
-		tag = "v<CurrentMajor>.*",
+		"williamboman/mason.nvim",
+		config = function()
+			require("mason").setup()
+		end,
+	}) -- Simple to use Language Server Installer
+	use({
+		"williamboman/mason-lspconfig.nvim",
+		config = function()
+			require("configs.mason-lsp")
+		end,
+		after = "mason.nvim",
 	})
 
-	-- cmp: Autocomplete
+	-- LSP diagnostics, code actions, and more via Lua.
+	-- use({
+	-- 	"jose-elias-alvarez/null-ls.nvim",
+	-- 	config = function()
+	-- 		require("configs.null-ls")
+	-- 	end,
+	-- 	requires = { "nvim-lua/plenary.nvim" },
+	-- })
+
+
+
+	-- use("onsails/lspkind-nvim")
+	-- use({
+	-- 	"L3MON4D3/LuaSnip",
+	-- 	-- follow latest release.
+	-- 	tag = "v<CurrentMajor>.*",
+	-- })
+
+	-- Cmp: Autocomplete
 	use({
 		"hrsh7th/nvim-cmp",
 		event = "InsertEnter",
@@ -129,34 +151,12 @@ return packer.startup(function(use)
 	use({ "hrsh7th/cmp-buffer", after = "nvim-cmp" }) -- Buffer completions
     use({ "hrsh7th/cmp-cmdline", after = "nvim-cmp" }) -- Command line completions
     use({ "saadparwaiz1/cmp_luasnip", after = "nvim-cmp" }) -- Snippets Completions
+    -- Github Copilot
+    use("github/copilot.vim")
     -- Snippets
     use ({"L3MON4D3/LuaSnip", after="nvim-cmp"}) --snippet engine
     use ({"rafamadriz/friendly-snippets", after="nvim-cmp"}) -- a bunch of snippets to use
 
-	-- LSP diagnostics, code actions, and more via Lua.
-	use({
-		"jose-elias-alvarez/null-ls.nvim",
-		config = function()
-			require("configs.null-ls")
-		end,
-		requires = { "nvim-lua/plenary.nvim" },
-	})
-
-	-- Mason: Portable package manager
-	use({
-		"williamboman/mason.nvim",
-		config = function()
-			require("mason").setup()
-		end,
-	})
-
-	use({
-		"williamboman/mason-lspconfig.nvim",
-		config = function()
-			require("configs.mason-lsp")
-		end,
-		after = "mason.nvim",
-	})
 
 	-- File manager
 	use({
