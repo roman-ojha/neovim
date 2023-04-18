@@ -34,3 +34,9 @@
         -> A (new directory)
         -> R (refresh)
         -> ? (help)
+
+*) Color Schemes:
+  -> colorscheme <given_color>
+
+*) Run Vim script from lua:
+  -> vim.cmd('<command>')

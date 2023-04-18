@@ -62,8 +62,8 @@ return packer.startup(function(use)
 	-- Icons
 	use("nvim-tree/nvim-web-devicons")
 
-	-- Colorschema
-	use("rebelot/kanagawa.nvim")
+	-- Colorschema/Theme
+	use("rebelot/kanagawa.nvim") 
 	
 	use ("moll/vim-bbye")
 

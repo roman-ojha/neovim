@@ -79,8 +79,8 @@ map("n", "<C-0>", "<CMD>Neotree focus<CR>", opts)
 map("n", "<SA-n>", "<CMD>enew<CR>", opts)
 
 -- Buffer Navigation
-map("n", "<SA-l>", ":bnext<CR>", opts)
-map("n", "<SA-h>", "<CMD>bprevious<CR>", opts)
+map("n", "<TAB>", ":bnext<CR>", opts)
+map("n", "<S-TAB>", "<CMD>bprevious<CR>", opts)
 
 -- Terminal
 map("n", "<CA-b>", "<CMD>ToggleTerm direction=vertical<CR>", term_opts)

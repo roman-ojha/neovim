@@ -1,0 +1,17 @@
+=> You can set the theme of you neovim as per you need
+=> Command:
+  -> colorscheme <given_color> (set colorscheme temporarily or for the current instance of neovim)
+
+=> you can set the color scheme to specific one just by adding this command in your init.lua file:
+  -> vim.cmd("colorscheme kanagawa")
+
+=> You can install the colorschemes from the internet or you can create your own colorscheme
+  *> Some popular colorschemes are:
+    -> https://github.com/folke/tokyonight.nvim
+    -> https://github.com/rebelot/kanagawa.nvim
+    -> https://vimcolorschemes.com/
+
+=> If you want to check does the required color scheme exist in that canse you can create new file to check 'colorscheme.lua'
+  -> https://github.com/LunarVim/Neovim-from-scratch/blob/04-colorscheme/lua/user/colorscheme.lua
+
+-> Todo: https://youtu.be/RtNPfJKNr_8?list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ&t=488
