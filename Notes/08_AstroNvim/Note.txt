@@ -1,0 +1,93 @@
+*) Setup:
+    -> https://github.com/AstroNvim/AstroNvim
+    -> https://astronvim.com/
+    -> clone repo int ~/AppData/Local/nvim
+    -> nvim
+    -> If you will getting some error after you run 'nvim' then  delete everything inside 'nvim-data' folder
+    
+    *)Setup user configuration:
+        -> clone: https://github.com/AstroNvim/user_example inside './lua/user'
+        
+    *) To configure Plugins in astro:
+        -> we can create a files with any name inside the 'plugins' directory
+        -> EX: for 'treesitter'
+            -> inside here it returns the configuration for plugins
+            -> ex, for treesitter you have to install language parser individually, we can add them inside 'ensure_installed'
+            -> or we can use ':TSInstall <>'
+            return {
+              "nvim-treesitter/nvim-treesitter", -- here we have to specify the plugins that we want to use
+              opts = {
+                -- ensure_installed = { "lua" },
+              },
+            }
+        -> EX: for 'mason.lua', it contain the configuration for multiple plugin inside the table
+            -> mason plugins manages the external editor tooling such as 'LSP', 'Linters', 'Formatter' & 'Debuggers'
+            *) for 'mason-lspconfig.nvim':
+                -> inside 'opts' we can add multiple packages as you want to install/use, or use can use :LspInstall <package>
+            *) for 'mason-null-ls.nvim':
+                -> this is similar to lsp config but design for tools that don't have a language server, such as formatter and linters.
+                -> you can add a source using 'ensure_installed' or use the ':NullLsInstall <>'
+            *) mason-nvim-dap:
+                -> Debug adapter protocol, enable language debuggers
+                -> you can use 'ensure_installed' to install adapter or you can use ':DapInstall' to install and adapter
+            return {
+                  -- use mason-lspconfig to configure LSP installations
+                  {
+                    "williamboman/mason-lspconfig.nvim",
+                    -- overrides `require("mason-lspconfig").setup(...)`
+                    opts = {
+                      -- ensure_installed = { "lua_ls" },
+                    },
+                  },
+                  -- use mason-null-ls to configure Formatters/Linter installation for null-ls sources
+                  {
+                    "jay-babu/mason-null-ls.nvim",
+                    -- overrides `require("mason-null-ls").setup(...)`
+                    opts = {
+                      -- ensure_installed = { "prettier", "stylua" },
+                    },
+                  },
+                  {
+                    "jay-babu/mason-nvim-dap.nvim",
+                    -- overrides `require("mason-nvim-dap").setup(...)`
+                    opts = {
+                      -- ensure_installed = { "python" },
+                    },
+                  },
+                }
+
+    *) Let's Install our first plugins
+        -> for now we will install: https://github.com/folke/todo-comments.nvim
+        -> get the plugin name usually it will be it's github repo: 'folke/todo-comments.nvim'
+        -> If the plugins have some dependencies the we have to add them as well
+        -> some times dependencies are listed under packers requires
+        -> we can chose our own plugin file name inside './lua' but we will use 'user.lua' file and add this:
+              {
+                "folke/todo-comments.nvim", -- we will first write the plugins name
+                dependencies = { "nvim-lua/plenary.nvim" }, -- then add it's dependencies
+                config = function() -- and set the config field which is called when initializing the plugins
+                  require("todo-comments").setup {
+                      -- you can use setup method to configure plugins
+                  }
+                end
+                -- opts = {} -- alternative way of 'config' field, which automatically calls the setup method with the arguments pass
+              }
+        
+*) Default Commands:
+    -> Astro follows the <leader>('space' in this case) key conventions
+    *) Navigate between directories:
+        -> h, j, k, l
+        -> h (close folder)
+    *) Focus to neo-tree(explorer)
+        -> <leader>o
+    *) Reload Files
+        -> :e
+    *) Some Package managers:
+        => treesitter
+            -> :TSInstall
+        => mason-lspconfig:
+            -> :LspInstall <package>
+        => mason-null-ls:
+            -> :NullLsInstall <>
+        => mason-nvim-dap:
+            -> :DapInstall
