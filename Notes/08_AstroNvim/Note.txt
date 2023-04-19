@@ -72,6 +72,48 @@
                 end
                 -- opts = {} -- alternative way of 'config' field, which automatically calls the setup method with the arguments pass
               }
+    
+    *) Lazy Loading:
+        -> By default the plugin manager will lazy load the plugins to improve performance
+        -> Plugins are not loaded by default
+        -> Plugins are lazy loaded when required
+        -> Plugins can be loaded from:
+            -> Events
+            -> Commands
+            -> Keys
+        -> Lazy loading can be disabled with 'lazy = false'
+              {
+                "folke/todo-comments.nvim",
+                dependencies = { "nvim-lua/plenary.nvim" },
+                opts = {}
+                cmd = {"TodoQuickFix"},
+                keys = {
+                  { "<leader>T", "<cmd>TodoTelescope<cr>", desc = "Open Todos in Telescope" },
+                },
+              }
+            *) Events
+                -> in above case to have to lazy load when the file is open in that case we can use the 'User AstroFile' event
+                -> You can see list of Lazy load event inside './Lazy Events.png'
+            *) Commands
+                -> we can also you 'Commands' to lazy load the plugins EX:
+                    -> :TodoQuickFix to sell the the todo lists
+                    -> to load the plugins when you run the command you can add the commands like "TodoQuickFix" into 'cmd' field
+            *) Keys
+                -> we can also create mappings using the 'keys' options which will also load the plugin
+                -> here we are mapping '<leader>T' with the given command
+    
+    *) AstroNvim Community:
+        ->  https://github.com/AstroNvim/astrocommunity
+        -> it also contain the community for configuring the plugins using astro community
+        -> with just a single line of code you can install and configure various plugins for project managements, utilities, colorscheme, and language packs
+        -> EX:
+            -> just by adding an import for the  typescript pack in the '/plugins/community.lua' file
+                  {import = "astrocommunity.pack.typescript"},
+
+                -> file: https://github.com/AstroNvim/astrocommunity/blob/main/lua/astrocommunity/pack/typescript/typescript.lua
+                -> it will install the additional plugins according to the added pack
+                
+
         
 *) Default Commands:
     -> Astro follows the <leader>('space' in this case) key conventions
