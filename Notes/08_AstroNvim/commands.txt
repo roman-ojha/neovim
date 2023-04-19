@@ -1,0 +1,134 @@
+*) Default Commands:
+    -> Astro follows the <leader>('space' in this case) key conventions
+    *) Reload Files
+        -> :e
+    *) Some Package managers:
+        => treesitter
+            -> :TSInstall
+        => mason-lspconfig:
+            -> :LspInstall <package>
+        => mason-null-ls:
+            -> :NullLsInstall <>
+        => mason-nvim-dap:
+            -> :DapInstall
+    *) Telescope:
+        -> <leader>f
+            -> f (find Files)
+                -> ? (to sell all the mappings inside telescope)
+                
+    *) Comment:
+        -> <leader>/
+        
+    => select the line & <leader>
+        -> it will show us the mapping available in visual mode
+        
+    *) Neo-tree:
+        => Navigate between directories:
+            -> h, j, k, l
+            -> h (close folder)
+        => Focus to neo-tree(explorer)
+            -> <leader>o
+        => See all the mapping after focus on neo-tree:
+            -> ?
+        => Navigate between Neo-tree, Buffers & Terminal
+            -> ctrl + h (left)
+            -> ctrl + l (right)
+            -> ctrl + j (down)
+            -> ctrl + k (up)
+        => Move between Tabs:
+            -> > (right)
+            -> < (left)
+
+    *) Buffers
+        => Open new buffer:
+            -> <leader>n
+        => Close the current buffer:
+            -> <leader>c
+        => move between buffers:
+            -> ]b (right buffer)
+            -> [b (left buffer)
+        => Move Buffer Tabs:
+            -> >b (to right)
+            -> <b (to left)
+        => Close Tabs:
+            -> <leader>q
+            
+    *) Splits:
+        -> <leader>\ (horizontal split)
+        -> <leader>| (vertical split)
+        
+    *) Resize Buffers, Explorer, Terminal:
+        -> ctrl + arrow keys
+        
+    *) Close current Buffer, Explorer, Terminal:
+        -> ctrl + q
+        
+    *) Git:
+        => To see all of the git mappings:
+            -> <leader>g
+        => To launch lazy.git:
+            -> <leader>gg
+        => To see git status of all changes files within Telescope:
+            -> <leader>gt
+            
+    *) Language Support:
+        => Manually Bring up completions in insert mode
+            -> ctrl + space
+        => Close completions suggestion in insert mode
+            -> ctrl + e
+        => Preview the type of the symbol under the cursor
+            -> K
+        => Go to hovered type definition
+            -> gT
+            -> ctrl + o (to go back)
+        => go to hovered Implementation
+            -> gI
+        => go to symbols definitions
+            -> gd
+        => to see references across the projects
+            -> gr
+        => when error are occurring on code to see the full message/error:
+            -> gl
+            => To jump inside the message popup
+                -> gl (again)
+                -> q (to close the pop up)
+        => Navigate between the errors
+            -> ]d (next error)
+            -> [d (previous error)
+        => See all Diagnostics
+            -> <leader>lD
+        => Rename Symbols:
+            -> <leader>lr
+        => Format the buffer:
+            -> <leader>lf
+        => To bring up code action:
+            -> <leader>la
+        => Exit Insert Mode
+            -> <ESC>
+            -> ctrl + [
+            -> jj
+            -> jk
+            
+    *) Terminal:
+        => Toggle Currently opened terminal:
+            -> F7
+
+    *) Sessions:
+        => Save Session:
+            -> <leader>Ss
+        => Load last saved session
+            -> <leader>S.
+    
+    *) Mouse:
+        => Block selection
+            -> ctrl + select
+        => Jump to it's definition
+            -> ctrl + click
+            
+    *) Folding:
+        => Toggle the current fold
+            -> za
+        => More folding
+            -> zm
+        => Reduce all folds
+            -> zr
