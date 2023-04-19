@@ -2,6 +2,8 @@
 -> :map (to open mapped details)
 -> :map <F2> a<C-R>=strftime("%c")<CR><Esc> (to map to different key)
 
+-> :checkhealth (to check for neovim configuration health)
+
 *) Mason Package manager
     -> :Mason (list all the installed and available packages)
     -> :MasonInstall <package_name> (to install package)

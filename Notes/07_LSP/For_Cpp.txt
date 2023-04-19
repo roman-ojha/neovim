@@ -1,0 +1,9 @@
+=> https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#clangd
+*) First install 'clang'
+    -> 'clang' is the c/c++ compiler
+    -> you can download it using 'LLVM':
+        -> https://github.com/llvm/llvm-project/releases/tag/llvmorg-16.0.0
+    -> Now you can add 'clang' isp as server inside 'isp_config'
+    -> it will work for single file
+    -> for multiple file:
+        -> https://youtu.be/BCuyEdDQ5iA?t=152
