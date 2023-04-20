@@ -1,0 +1,24 @@
+*) Highlight:
+    -> In Neovim, highlight refers to the color scheme used to highlight syntax elements in a file. Syntax highlighting is a feature that displays text, especially source code, in different colors and fonts according to the category of terms. This makes it easier for users to read and understand code by visually separating different elements of the code. Neovim provides a wide range of syntax highlighting options that can be customized according to user preferences
+
+=> We can make neovim transparent using highlight command:
+    highlight Normal ctermbg=none guibg=none
+    highlight NonText ctermbg=none guibg=none
+
+    hi Normal guibg=none ctermbg=none
+    hi LineNr guibg=none ctermbg=none
+    hi Folded guibg=none ctermbg=none
+    hi NonText guibg=none ctermbg=none
+    hi SpecialKey guibg=none ctermbg=none
+    hi VertSplit guibg=none ctermbg=none
+    hi SignColumn guibg=none ctermbg=none
+    hi EndOfBuffer guibg=none ctermbg=none
+    
+    OR:
+        vim.cmd "hi Normal guibg=NONE ctermbg=NONE"
+        vim.cmd "hi CursorColumn cterm=NONE ctermbg=NONE ctermfg=NONE"
+        vim.cmd "hi CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE"
+        vim.cmd "hi CursorLineNr cterm=NONE ctermbg=NONE ctermbg=NONE"
+        vim.cmd "hi clear LineNr"
+        vim.cmd "hi clear SignColumn"
+        vim.cmd "hi clear StatusLine"
