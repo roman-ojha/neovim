@@ -45,6 +45,8 @@
         => Change Current explorer root directory
             -> Backspace (to go backwards)
             -> . (to go forwards)
+        => Toggle hidden files:
+            -> shift + h
 
     *) Buffers
         => Open new buffer:
