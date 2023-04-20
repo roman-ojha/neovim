@@ -1,3 +1,14 @@
+*) Requirements:
+  -> https://github.com/AstroNvim/AstroNvim#-requirements
+  1> Nerd Fonts:
+  2> Neovim 0.8+
+  3> Tree-sitter CLI (to use nvim-treesitter)
+    -> for this to run we need MingGW Toolchain c/c++ compiler using 'https://www.msys2.org/'
+      -> for more info: https://github.com/nvim-treesitter/nvim-treesitter/wiki/Windows-support
+      -> https://github.com/nvim-treesitter/nvim-treesitter#requirements
+    -> Also:
+      -> npm install -g tree-sitter-cli
+
 *) Setup:
     -> https://github.com/AstroNvim/AstroNvim
     -> https://astronvim.com/
@@ -114,31 +125,31 @@
                 -> it will install the additional plugins according to the added pack
                 
 
-    *) Features/Usage Overview
-        1) which-key
-            -> if we will just press the <leader> key
-            -> we can see all the key mapping that I can use
-            -> This include the custom mapping as well
-            -> The 'Items' listed in blue color are submenus where we can see additional mapping for the for that Menu
-            -> EX: for the 'Find Files' inside Telescope we can use '<leader>ff'
-                -> then 'ctrl+up' & 'ctrl+down' to scroll with files
-            -> we can use '?' to see all the list of mappings available inside telescope
-        2) Telescope
-        3) Buffers
-        4) neo-tree
-        5) Splits
-        6) Git Integration
-            -> Green Indicate Addition
-            -> Red Indicate Deletion
-            -> Orange Indicate Changes
-            -> We can integrate LazyGit: https://github.com/jesseduffield/lazygit
-        7) Language support
-            -> it can support multiple language
-            -> while coding it can so use a language  server report diagnostics and show type a we code
-        8) Terminal
-        9) Sessions
-            -> It can store the state of what we are doing inside the neovim we use it for future
-        10) Mouse
-            -> We can use mouse for a lot of task as well
-        11) Folding
-        
+*) Features/Usage Overview
+    1) which-key
+        -> if we will just press the <leader> key
+        -> we can see all the key mapping that I can use
+        -> This include the custom mapping as well
+        -> The 'Items' listed in blue color are submenus where we can see additional mapping for the for that Menu
+        -> EX: for the 'Find Files' inside Telescope we can use '<leader>ff'
+            -> then 'ctrl+up' & 'ctrl+down' to scroll with files
+        -> we can use '?' to see all the list of mappings available inside telescope
+    2) Telescope
+    3) Buffers
+    4) neo-tree
+    5) Splits
+    6) Git Integration
+        -> Green Indicate Addition
+        -> Red Indicate Deletion
+        -> Orange Indicate Changes
+        -> We can integrate LazyGit: https://github.com/jesseduffield/lazygit
+    7) Language support
+        -> it can support multiple language
+        -> while coding it can so use a language  server report diagnostics and show type a we code
+    8) Terminal
+    9) Sessions
+        -> It can store the state of what we are doing inside the neovim we use it for future
+    10) Mouse
+        -> We can use mouse for a lot of task as well
+    11) Folding
+    
