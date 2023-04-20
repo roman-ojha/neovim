@@ -1,0 +1,36 @@
+12) User configuration:
+  -> you can you own configuration from the actual default AstroNvim configuration inside 'lua/user' folder
+  -> where I can start from : https://github.com/astroNvim/user_example
+  -> and modify there rather then modifying the actual AstroNvim config, it will help you to update AstroNvim in future
+  -> some user configurations examples:
+    -> https://github.com/AstroNvim/AstroNvim/issues/1189
+
+*) Plugin Configuration:
+    -> you have to create a file inside 'lua/user/plugins/<plugin_name>.lua add you configuration
+    -> EX: for neo-tree.lua
+        -> return {
+          "nvim-neo-tree/neo-tree.nvim",
+          opts = {
+            default_component_configs = {
+              indent = {
+                padding = 10,
+              },
+            },
+          },
+        }
+        -> OR:
+        -> return {
+          "nvim-neo-tree/neo-tree.nvim",
+          opts = function()
+            return{
+                default_component_configs = {
+                  indent = {
+                    padding = 10,
+                  },
+                },
+            } 
+          end,
+        }
+        
+*) LSP configuration:
+    -> https://github.com/AstroNvim/AstroNvim/issues/581

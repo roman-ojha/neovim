@@ -11,6 +11,10 @@
             -> :NullLsInstall <>
         => mason-nvim-dap:
             -> :DapInstall
+        => Manson:
+            -> Manson
+        => Lazy.nvim
+            => Lazy
     *) Telescope:
         -> <leader>f
             -> f (find Files)
@@ -38,6 +42,9 @@
         => Move between Tabs:
             -> > (right)
             -> < (left)
+        => Change Current explorer root directory
+            -> Backspace (to go backwards)
+            -> . (to go forwards)
 
     *) Buffers
         => Open new buffer:
