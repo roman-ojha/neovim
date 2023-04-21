@@ -43,3 +43,8 @@
 
 *) Run Vim script from lua:
   -> vim.cmd('<command>')
+
+
+*) Language support for highlighting:
+    -> TSInstall is the default neovim package manager for highlighting
+    -> :TSInstall

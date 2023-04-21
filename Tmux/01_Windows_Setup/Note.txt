@@ -4,3 +4,5 @@
 *) Setup:
   -> we will use:
     -> https://www.cygwin.com/
+  -> Manage Powershell window using TMUX:
+    -> https://superuser.com/questions/408874/tmux-screen-alternative-for-powershell
