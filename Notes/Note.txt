@@ -1,0 +1,7 @@
+*) To set keymap using vim api:
+  -> vim.api.nvim_set_keymap('n', '<leader>c', ':lua run_cmd()<CR>', { noremap = true, silent = true })
+
+*) TS:
+  => it provide the languag syntax highlighting
+  => command:
+    -> :TSInstall <language_name>
