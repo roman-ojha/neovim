@@ -37,14 +37,13 @@
         -> R (refresh)
         -> ? (help)
         -> ctrl + shift + h (toggle hidden files)
+    *) Toggle Term:
+        => Open multiple terminal with different processes
+            -> :1ToggleTerm
+            -> :2ToggleTerm
 
 *) Color Schemes:
   -> colorscheme <given_color>
 
 *) Run Vim script from lua:
   -> vim.cmd('<command>')
-
-
-*) Language support for highlighting:
-    -> TSInstall is the default neovim package manager for highlighting
-    -> :TSInstall
