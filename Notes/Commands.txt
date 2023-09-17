@@ -1,3 +1,5 @@
 => : (write Command)
 => / (search word)
 => ? (search word i think?)
+-> % (create new file)
+-> d (to create directory from folder structure mode)
