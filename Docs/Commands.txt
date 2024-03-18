@@ -47,3 +47,8 @@
 
 *) Run Vim script from lua:
   -> vim.cmd('<command>')
+  
+
+*) Run nvim without user configuration:
+  -> nvim -u NONE
+  -> nvim -u NORC
